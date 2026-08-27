@@ -5,3 +5,7 @@ alias la="eza -a --icons"
 alias cat="bat"
 alias ".."="cd .."
 alias "..."="cd ../.."
+if status is-interactive
+    fastfetch
+end
+set fish_greeting   

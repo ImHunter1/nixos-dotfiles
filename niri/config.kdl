@@ -99,7 +99,15 @@ window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
 }
-
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+    opacity 0.75
+}
+window-rule {
+    match app-id=r#"brave-browser"#
+    opacity 1.0
+}
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
@@ -128,8 +136,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+X { spawn "noctalia" "msg" "panel-toggle" "wallpaper"; }
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+N{ spawn "kitty" "-e" "nvim"; }
     Mod+A hotkey-overlay-title="Run Application Launcher" {
-    spawn "noctalia" "msg" "panel-toggle" "launcher";
+         spawn "noctalia" "msg" "panel-toggle" "launcher";
 	}
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Super+B {spawn "brave";}
@@ -287,11 +296,7 @@ binds {
 
 
 // You can change this
-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
-    opacity 0.75
-}
+
 
 window-rule {
     draw-border-with-background false
