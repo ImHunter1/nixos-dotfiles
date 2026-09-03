@@ -19,11 +19,6 @@
 		enable = true;
 		commandLineArgs = ["--password-store=basic"];
 	};
-	programs.neovim.nvimdots = {
-   		 enable = true;
-    		setBuildEnv = true;
-   		 withBuildTools = true;
-	};
 	## fish
 	programs.starship = {
 	  enable = true;
@@ -71,6 +66,8 @@ xdg.configFile."fish/config.fish".source = ./fish/config.fish;
 		gh
 		python3
 		nil
+    go
+    dotnet-sdk
 		nixpkgs-fmt
 		unzip
 		eza
@@ -84,21 +81,19 @@ xdg.configFile."fish/config.fish".source = ./fish/config.fish;
 		kitty
 		swaybg
 		imv
-		stylua
-		clang-tools
+		neovim
 		starship
 		fish
 		swaylock
-		discord
 		spotify
 		btop
 		cava
+		discord-ptb
 		pipes
 		
 	];
 	imports = [
 		inputs.noctalia.homeModules.default
-		inputs.nvimdots.homeManagerModules.default
 	];
 	## home.file.".config/qtile".source = ./config/qtile;
 }

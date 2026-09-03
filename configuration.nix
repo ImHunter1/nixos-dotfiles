@@ -12,8 +12,19 @@
 
   # Bootloader.
   boot.loader.efi.canTouchEfiVariables = false;
-
-  #niri
+  ## mounts
+  boot.supportedFilesystems = [ "ntfs" ];
+  fileSystems."/mnt/windows/w970" =
+      { device = "/dev/nvme0n1p2";
+        fsType = "ntfs-3g"; 
+        options = [ "rw" "uid=1000"];
+  };
+  fileSystems."/mnt/windows/w980" =
+      { device = "/dev/nvme1n1p3";
+        fsType = "ntfs-3g"; 
+        options = [ "rw" "uid=1000"];
+  };
+  ##niri
   programs.niri.enable = true;
   networking.hostName = "hntr"; 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -30,7 +41,18 @@
   programs.fish.enable = true;
   # Set your time zone.
   time.timeZone = "Europe/Warsaw";
-
+  #printing 
+  services.printing = {
+      enable = true;
+      drivers = [  
+      pkgs.brlaser
+      pkgs.brgenml1lpr
+      pkgs.brgenml1cupswrapper];
+  };
+  services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+  };
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -94,7 +116,7 @@ boot.loader = {
   users.users."hntr" = {
     isNormalUser = true;
     description = "Hntr";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "lpadnim"];
     packages = with pkgs; [];
   };
 
