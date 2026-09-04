@@ -9,10 +9,7 @@
 
  		 userName = "ImHunter1";
  		 userEmail = "icaldhunter@gmail.com";
-		extraConfig = {
-       		 url."https://github.com/".insteadOf = "git@github.com:";
-   		 };
-	};	
+		};	
 	programs.fastfetch.enable = true;
 	programs.noctalia.enable = true;
 	programs.brave = {
@@ -72,7 +69,8 @@ xdg.configFile."fish/config.fish".source = ./fish/config.fish;
 		unzip
 		eza
 		bat
-  		fzf 
+    nautilus
+  	fzf 
 		ripgrep
 		fd
 		gcc
@@ -88,7 +86,7 @@ xdg.configFile."fish/config.fish".source = ./fish/config.fish;
 		spotify
 		btop
 		cava
-		discord-ptb
+		discord
 		pipes
 		
 	];

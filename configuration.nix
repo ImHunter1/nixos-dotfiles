@@ -17,13 +17,13 @@
   fileSystems."/mnt/windows/w970" =
       { device = "/dev/nvme0n1p2";
         fsType = "ntfs-3g"; 
-        options = [ "rw" "uid=1000"];
-  };
-  fileSystems."/mnt/windows/w980" =
-      { device = "/dev/nvme1n1p3";
-        fsType = "ntfs-3g"; 
-        options = [ "rw" "uid=1000"];
-  };
+        options = [ "nofail" "x-systemd.automount" "rw" ];
+      };
+fileSystems."/mnt/windows/w980" =
+    { device = "/dev/nvme1n1p3";
+    fsType = "ntfs-3g"; 
+    options = [ "nofail" "x-systemd.automount" "rw" ];
+    };
   ##niri
   programs.niri.enable = true;
   networking.hostName = "hntr"; 
