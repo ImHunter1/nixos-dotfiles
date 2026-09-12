@@ -47,7 +47,20 @@
 	    };
 	  };
 	};
-
+  programs.fetch = {
+    enable = true;
+    labelColor = "red";
+    info = [
+      "os"
+      "kernel"
+      "uptime"
+      "cpu"
+      "gpu"
+      "memory"
+    ];
+    size = 0.5;
+    spin = "xy";
+  };
 xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
 xdg.configFile."fastfetch/config.jsonc".source = ./fastfetch/config.jsonc;
 xdg.configFile."kitty/kitty.conf".source = ./kitty/kitty.conf;
@@ -92,6 +105,7 @@ xdg.configFile."fish/config.fish".source = ./fish/config.fish;
 	];
 	imports = [
 		inputs.noctalia.homeModules.default
+    inputs.areofyl-fetch.homeManagerModules.default 
 	];
 	## home.file.".config/qtile".source = ./config/qtile;
 }

@@ -19,7 +19,7 @@
         fsType = "ntfs-3g"; 
         options = [ "nofail" "x-systemd.automount" "rw" ];
       };
-fileSystems."/mnt/windows/w980" =
+  fileSystems."/mnt/windows/w980" =
     { device = "/dev/nvme1n1p3";
     fsType = "ntfs-3g"; 
     options = [ "nofail" "x-systemd.automount" "rw" ];
