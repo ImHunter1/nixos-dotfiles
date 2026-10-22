@@ -49,6 +49,7 @@
       pkgs.brgenml1lpr
       pkgs.brgenml1cupswrapper];
   };
+  services.udisks2.enable = true;
   services.avahi = {
       enable = true;
       nssmdns4 = true;

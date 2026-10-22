@@ -5,7 +5,7 @@ alias la="eza -a --icons"
 alias cat="bat"
 alias ".."="cd .."
 alias "..."="cd ../.."
-alias rebuild = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hntr"
+alias rebld="sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hntr"
 if status is-interactive
     fastfetch
 end

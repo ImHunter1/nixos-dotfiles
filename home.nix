@@ -42,7 +42,7 @@
 	    };
 
 	    character = {
-	      success_symbol = "[❯](bold green)";
+	      success_symbol = "[❯](bold gren)";
 	      error_symbol = "[❯](bold red)";
 	    };
 	  };
@@ -61,6 +61,12 @@
     size = 0.5;
     spin = "xy";
   };
+  services.udiskie = {
+  enable = true;
+  automount = true;
+  notify = true;
+  tray = "auto";
+  };
 xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
 xdg.configFile."fastfetch/config.jsonc".source = ./fastfetch/config.jsonc;
 xdg.configFile."kitty/kitty.conf".source = ./kitty/kitty.conf;
@@ -75,7 +81,10 @@ xdg.configFile."fish/config.fish".source = ./fish/config.fish;
 		uv
 		gh
 		python3
+    python3Packages.pip 
+    kdePackages.kcalc
 		nil
+    pinta
     go
     dotnet-sdk
 		nixpkgs-fmt
