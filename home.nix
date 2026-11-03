@@ -83,6 +83,8 @@ xdg.configFile."fish/config.fish".source = ./fish/config.fish;
 		python3
     python3Packages.pip 
     kdePackages.kcalc
+    ttyper
+    docker
 		nil
     pinta
     go
