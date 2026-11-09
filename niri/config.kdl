@@ -47,7 +47,7 @@ layout {
 
     focus-ring {
         on
-        width 3
+        width 2
 	active-color "#ff8c00"
         inactive-color "#ff8c00"
     }
@@ -123,17 +123,6 @@ window-rule {
 
     block-out-from "screen-capture"
 }
-
-window-rule {
-    match app-id="org.prismlauncher.PrismLauncher"
-    open-floating true
-}
-
-window-rule {
-    match title="Minecraft"
-    open-floating true
-}
-
 
 //change these binds if you want diffrent keys
 binds {
